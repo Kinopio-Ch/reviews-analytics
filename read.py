@@ -7,11 +7,12 @@ with open('reviews.txt', 'r') as f:
         if count % 10000 == 0:     #count跟1000求餘數
             print(len(data))   #印出現在讀取到哪一行   
 
-print(len(data))  #印出data清單加入review.txt後的清單長度
+print('檔案讀取完了，總共有', len(data), '筆資料')  #印出data清單加入review.txt後的清單長度
 
-print(data[0])   #印出第一筆資料
-print('---------------')
-print(data[1])
-
+#求留言平均長度
+sum_len = 0  
+for d in data:
+    sum_len += len(d)    #長度加總
+print('每筆留言平均長度:', sum_len / 1000000)
 
 
