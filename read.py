@@ -8,6 +8,7 @@ with open('reviews.txt', 'r') as f:
             print(len(data))   #印出現在讀取到哪一行   
 
 print('檔案讀取完了，總共有', len(data), '筆資料')  #印出data清單加入review.txt後的清單長度
+###################################################################
 
 #求留言平均長度
 sum_len = 0  
@@ -15,4 +16,12 @@ for d in data:
     sum_len += len(d)    #長度加總
 print('每筆留言平均長度:', sum_len / 1000000)
 
+######################################################################
 
+#篩選長度小於100
+less_then_100 = []
+for d in data:
+    if len(d) < 100:
+        less_then_100.append(d)
+print('留言小於100的有', len(less_then_100), '個')  
+print(less_then_100[0])
